@@ -1,10 +1,8 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "build/",
-            "use": "@vercel/static-build",
-            "outputDirectory": "build/"
-        }
-    ]
+        { "src": "build/**/*.html", "use": "@now/static" },
+        { "src": "build/**/*", "use": "@now/static" }
+    ],
+    "routes": [{ "src": "/(.*)", "dest": "/$1" }]
 }
