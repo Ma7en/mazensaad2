@@ -1,0 +1,123 @@
+/* start pricing */
+
+.pricing {
+    .container {
+        .row {
+            .prices {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+                /* display: flex; */
+                &:nth-child(odd) {
+                    margin-top: 1.5rem;
+                }
+                &:nth-child(1) {
+                    padding-left: 15px;
+                }
+                &:nth-child(3) {
+                    padding-right: 15px;
+                }
+
+                .price-item {
+                    position: relative;
+                    padding: var(--card-padding);
+                    background-color: var(--color-white);
+                    text-align: center;
+                    box-shadow: var(--box-shadow);
+                    border-radius: var(--border-radius);
+                    -webkit-border-radius: var(--border-radius);
+                    -moz-border-radius: var(--border-radius);
+                    -ms-border-radius: var(--border-radius);
+                    -o-border-radius: var(--border-radius);
+
+                    h2.plan {
+                        margin: var(--m-0-75);
+                    }
+
+                    p {
+                        margin-bottom: 1rem;
+                    }
+
+                    .price {
+                        font-size: var(--h1-font-size);
+                        font-weight: var(--font-semi-bold);
+                        em {
+                            font-style: normal;
+                            font-size: var(--small-font-size);
+                            margin-right: var(--m-0-5);
+                            vertical-align: super;
+                        }
+                        span {
+                            font-size: var(--normal-font-size);
+                            margin-left: var(--m-0-75);
+                        }
+                    }
+
+                    .btn {
+                        margin-top: var(--m-1-5);
+                    }
+
+                    &.best {
+                        padding: 3.25rem 2.5rem;
+                        z-index: 2;
+                        position: relative;
+
+                        @media (max-width: 968px) {
+                            padding: var(--card-padding);
+                        }
+                    }
+
+                    .badge {
+                        position: absolute;
+                        left: 0;
+                        top: 2.6rem;
+                        color: #fff;
+                        background-color: var(--color-primary);
+                        padding: 0.4rem 0.75rem;
+                        font-size: var(--small-font-size);
+                        border-top-left-radius: var(--border-radius);
+                        border-bottom-left-radius: var(--border-radius);
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        transform: rotate(-90deg);
+                        -webkit-transform: rotate(-90deg);
+                        -moz-transform: rotate(-90deg);
+                        -ms-transform: rotate(-90deg);
+                        -o-transform: rotate(-90deg);
+                    }
+                }
+
+                @media (max-width: 968px) {
+                    /* start services */
+
+                    flex: 0 0 50% !important;
+                    max-width: 50% !important;
+                    margin-bottom: var(--m-2-5);
+
+                    &:nth-child(odd) {
+                        margin-top: 0;
+                    }
+
+                    &:nth-child(1) {
+                        padding-right: 15px;
+                    }
+
+                    &:nth-child(2) {
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+
+                    &:nth-child(3) {
+                        padding-left: 15px;
+                    }
+                }
+
+                @media (max-width: 767px) {
+                    flex: 0 0 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+/* end pricing */

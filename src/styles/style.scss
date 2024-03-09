@@ -1,0 +1,101 @@
+@import "./scss/public/rest";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --color: red;
+    --main-transition: all 0.5s;
+    --padding-sc: 50px;
+    --theme-color-primary: rgb(80, 101, 160);
+    --theme-color-secondary: rgb(255, 127, 127);
+    --theme-color-gradient: rgb(39, 57, 79);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+// --main
+@import "scss/global/main";
+
+// ::-webkit-scrollbar {
+//     width: 0.6rem;
+//     background: hsl(252, 30%, 100%);
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     /* background: hsl(352, 75%, 60%); */
+//     background: var(--main-color, #3a6cf4);
+//     border-radius: 0.5rem;
+//     -webkit-border-radius: 0.5rem;
+//     -moz-border-radius: 0.5rem;
+//     -ms-border-radius: 0.5rem;
+//     -o-border-radius: 0.5rem;
+// }
+
+/* start global */
+
+// start components
+@import "scss/global/customizetheme";
+@import "scss/global/header";
+@import "scss/global/landing";
+@import "scss/global/about";
+@import "scss/global/services";
+@import "scss/global/education";
+@import "scss/global/pricing";
+@import "scss/global/portfolio";
+@import "scss/global/testimonial";
+@import "scss/global/blogs";
+@import "scss/global/contact";
+@import "scss/global/footer";
+
+@media (max-width: 767px) {
+    /* start about */
+    .about-content .about-text,
+    .about-content .skills,
+    .services .service-item,
+    .portfolio-item,
+    .contact-data,
+    .contact-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .education,
+    .blog-item,
+    .contact-data {
+        margin-bottom: var(--m-2-5);
+    }
+
+    /* start portfolio */
+    .portfolio-item,
+    .blog-item,
+    .fact-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    /* start glob */
+    :root {
+        --h1-font-size: 1.75rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+    }
+}
+
+// end components

@@ -1,0 +1,65 @@
+/* start services */
+.services {
+    .container {
+        .row {
+            .service-item {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+                display: flex;
+                .service-item-inner {
+                    padding: var(--card-padding);
+                    text-align: center;
+                    transition: var(--main-transition);
+                    transform: translateY(0);
+                    border-radius: var(--border-radius);
+                    -webkit-border-radius: var(--border-radius);
+                    -moz-border-radius: var(--border-radius);
+                    -ms-border-radius: var(--border-radius);
+                    -o-border-radius: var(--border-radius);
+                    -webkit-transform: translateY(0);
+                    -moz-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                    -o-transform: translateY(0);
+                    -webkit-transition: var(--main-transition);
+                    -moz-transition: var(--main-transition);
+                    -ms-transition: var(--main-transition);
+                    -o-transition: var(--main-transition);
+                    &:hover {
+                        transform: translateY(-0.625rem);
+                        -webkit-transform: translateY(-0.625rem);
+                        -moz-transform: translateY(-0.625rem);
+                        -ms-transform: translateY(-0.625rem);
+                        -o-transform: translateY(-0.625rem);
+                    }
+
+                    img {
+                        margin-bottom: var(--m-0-75);
+                    }
+                    h3 {
+                        margin-top: 10px;
+                        margin-bottom: var(--m-0-5);
+                        color: #fff;
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+                @media (max-width: 968px) {
+                    flex: 0 0 50% !important;
+                    max-width: 50% !important;
+                    margin-bottom: var(--m-2-5);
+                }
+            }
+        }
+
+        .text {
+            text-align: center;
+            margin-top: var(--m-1-5);
+            a {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+/* end services */

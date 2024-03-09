@@ -1,0 +1,130 @@
+/* start about */
+.about {
+    .container {
+        .row {
+            .about-img {
+                flex: 0 0 25%;
+                max-width: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @media (max-width: 968px) {
+                    text-align: center;
+                    margin-bottom: var(--m-2-5);
+                }
+            }
+
+            .about-content {
+                flex: 0 0 75%;
+                max-width: 75%;
+                .rounded {
+                    background-color: var(--color-white);
+                    padding: var(--card-padding);
+                    border-radius: var(--border-radius);
+                    -webkit-border-radius: var(--border-radius);
+                    -moz-border-radius: var(--border-radius);
+                    -ms-border-radius: var(--border-radius);
+                    -o-border-radius: var(--border-radius);
+
+                    .about-text,
+                    .skills {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                        @media (max-width: 767px) {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
+                    }
+
+                    .about-text {
+                        p {
+                            text-align: justify;
+                            margin-bottom: var(--m-1);
+                        }
+
+                        @media (max-width: 767px) {
+                            margin-bottom: var(--m-1-5);
+                        }
+                    }
+
+                    .skills {
+                        .skill-item {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+
+                            h4 {
+                                margin-bottom: var(--m-0-75);
+                            }
+
+                            .progress {
+                                background-color: var(--color-light);
+                                height: 0.45rem;
+                                width: 100%;
+                                position: relative;
+                                border-radius: var(--border-radius);
+                                -webkit-border-radius: var(--border-radius);
+                                -moz-border-radius: var(--border-radius);
+                                -ms-border-radius: var(--border-radius);
+                                -o-border-radius: var(--border-radius);
+
+                                .progress-in {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    height: 100%;
+                                    border-radius: var(--border-radius);
+                                    -webkit-border-radius: var(--border-radius);
+                                    -moz-border-radius: var(--border-radius);
+                                    -ms-border-radius: var(--border-radius);
+                                    -o-border-radius: var(--border-radius);
+                                }
+
+                                .skill-percent {
+                                    position: absolute;
+                                    right: 0;
+                                    top: -2.5rem;
+                                }
+                            }
+
+                            &:not(:last-child) {
+                                margin-bottom: var(--m-1-5);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fact-item {
+                flex: 0 0 25%;
+                max-width: 25%;
+                margin-top: var(--m-2-5);
+                text-align: center;
+                flex-wrap: wrap;
+                o {
+                    font-size: var(--h2-font-size);
+                    color: var(--color-gray);
+                }
+                // background-color: red;
+
+                @media (max-width: 576px) {
+                    flex: 0 0 50%;
+                    max-width: 100%;
+                }
+            }
+
+            @media (max-width: 968px) {
+                /* start about */
+                .about-content,
+                .about-img {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+            // &:nth-of-type(2) {
+            //     // background-color: red;
+            // }
+        }
+    }
+}
+
+/* end about */

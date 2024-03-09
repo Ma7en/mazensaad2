@@ -1,0 +1,115 @@
+/* start landing */
+
+.landing {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        height: calc(100vh + 80px);
+        .intro {
+            text-align: center;
+            position: relative;
+            /* max-width: 540px; */
+            img {
+                margin-bottom: var(--m-1);
+            }
+
+            .social-icons {
+                margin-top: var(--m-1-5);
+                margin-bottom: var(--m-2);
+                li {
+                    display: inline-block;
+                    &:not(:last-child) {
+                        margin-right: var(--m-1-5);
+                    }
+                    a {
+                        font-size: var(--h3-font-size);
+                        i {
+                            transition: var(--main-transition);
+                            -webkit-transition: var(--main-transition);
+                            -moz-transition: var(--main-transition);
+                            -ms-transition: var(--main-transition);
+                            -o-transition: var(--main-transition);
+                        }
+                        &:hover i {
+                            color: var(--color-primary);
+                        }
+                    }
+                }
+            }
+
+            .scroll-down {
+                /* position: absolute; */
+                bottom: var(--m-2-5);
+                left: 0;
+                width: 100%;
+                margin-top: var(--m-1);
+
+                .mouse-wrapper {
+                    font-size: var(--small-font-size);
+                    display: block;
+                    margin: auto;
+                    max-width: 100%;
+                    text-align: center;
+
+                    .mouse {
+                        border: 2px solid var(--color-dark);
+                        display: block;
+                        height: 1.75rem;
+                        width: 1.25rem;
+                        margin: auto;
+                        margin-top: var(--m-0-75);
+                        position: relative;
+                        border-radius: var(--border-radius);
+                        -webkit-border-radius: var(--border-radius);
+                        -moz-border-radius: var(--border-radius);
+                        -ms-border-radius: var(--border-radius);
+                        -o-border-radius: var(--border-radius);
+
+                        .wheel {
+                            background-color: var(--color-dark);
+                            width: 0.25rem;
+                            height: 0.25rem;
+                            position: absolute;
+                            top: var(--m-0-5);
+                            left: 50%;
+                            transform: translateX(-50%);
+                            animation: ani-mouse 2s linear infinite;
+                            border-radius: 50%;
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                            -o-border-radius: 50%;
+                            -webkit-animation: ani-mouse 2s linear infinite;
+                            -webkit-transform: translateX(-50%);
+                            -moz-transform: translateX(-50%);
+                            -ms-transform: translateX(-50%);
+                            -o-transform: translateX(-50%);
+                        }
+
+                        @keyframes ani-mouse {
+                            0% {
+                                top: 29%;
+                            }
+
+                            25% {
+                                top: 50%;
+                            }
+
+                            50% {
+                                top: 50%;
+                            }
+
+                            100% {
+                                top: 29%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* end landing */

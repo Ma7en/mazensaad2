@@ -1,0 +1,72 @@
+/* start testimonial */
+
+.testimonial {
+    .container {
+        .swiper.testimonial-wrapper {
+            margin: auto;
+            max-width: 700px;
+            .swiper-wrapper {
+                .testimonial-item {
+                    padding: 0 1.25rem 1.25rem;
+                    text-align: center;
+                    .thumb {
+                        overflow: hidden;
+                        height: 5.6rem;
+                        width: 5.6rem;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                    h3 {
+                        margin-top: var(--m-0-75);
+                    }
+                    .subtitle {
+                        color: var(--color-gray);
+                        font-size: var(--small-font-size);
+                    }
+                    .comment {
+                        background: var(--color-white);
+                        padding: var(--card-padding);
+                        margin-top: var(--m-1);
+                        border-radius: var(--border-radius);
+                        -webkit-border-radius: var(--border-radius);
+                        -moz-border-radius: var(--border-radius);
+                        -ms-border-radius: var(--border-radius);
+                        -o-border-radius: var(--border-radius);
+                    }
+                }
+            }
+
+            .swiper-pagination {
+                position: initial;
+                margin-top: var(--m-1);
+                .swiper-pagination-bullet {
+                    width: 0.5rem;
+                    height: 0.375rem;
+                    background: var(--color-primary);
+                    opacity: 1;
+                }
+
+                .swiper-pagination-horizontal.swiper-pagination-bullets
+                    .swiper-pagination-bullet {
+                    margin: 0 0.2rem;
+                }
+
+                .swiper-pagination-bullet-active {
+                    width: 1.2rem;
+                    height: 0.375rem;
+                    border-radius: 0.5rem;
+                    -webkit-border-radius: 0.5rem;
+                    -moz-border-radius: 0.5rem;
+                    -ms-border-radius: 0.5rem;
+                    -o-border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+/* end testimonial */

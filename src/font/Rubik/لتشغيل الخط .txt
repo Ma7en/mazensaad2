@@ -1,0 +1,34 @@
+
+/* link html
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+*/
+
+/* font-family: 'Rubik', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+	font-family: 'Rubik', sans-serif;
+
+	src: url("../font/Rubik/Rubik-Italic-VariableFont_wght.ttf");
+	src: url("../font/Rubik/Rubik-VariableFont_wght.ttf");
+
+
+	src: url("../font/Rubik/static/Rubik-Black.ttf");
+	src: url("../font/Rubik/static/Rubik-BlackItalic.ttf");
+	src: url("../font/Rubik/static/Rubik-Bold.ttf");
+	src: url("../font/Rubik/static/Rubik-BoldItalic.ttf");
+	src: url("../font/Rubik/static/Rubik-ExtraBold.ttf");
+	src: url("../font/Rubik/static/Rubik-ExtraBoldItalic.ttf");
+	src: url("../font/Rubik/static/Rubik-Italic.ttf");
+	src: url("../font/Rubik/static/Rubik-Light.ttf");
+	src: url("../font/Rubik/static/Rubik-LightItalic.ttf");
+	src: url("../font/Rubik/static/Rubik-Medium.ttf");
+	src: url("../font/Rubik/static/Rubik-MediumItalic.ttf");
+	src: url("../font/Rubik/static/Rubik-Regular.ttf");
+	src: url("../font/Rubik/static/Rubik-SemiBold.ttf");
+	src: url("../font/Rubik/static/Rubik-SemiBoldItalic.ttf");
+
+}

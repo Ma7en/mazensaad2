@@ -1,0 +1,40 @@
+section.contact.section#contact
+  .container
+    h2.section-title.padd-15 Contact My
+
+    .row
+
+      .contact-box.padd-15
+        .contact-data
+          .contact-information
+            h3.contact-subtitle.
+              call us for instant support
+            span.contact-description
+              i.lni.lni-phone.contact-icon
+              | +20 123 123 123
+
+          .contact-information
+            h3.contact-subtitle.
+              write us bt mail
+            span.contact-description
+              i.lni.lni-user.contact-icon
+              | info@gmail.com
+
+      form.contact-form.padd-15(action)
+        .contact-inputs
+          .contact-content
+            input.contact-input(type="email", name, id="inputemail")
+            label.contact-label(for="inputemail").
+              email
+            span
+          .contact-content
+            input.contact-input(type="text", name,id="inputtext")
+            label.contact-label(for="inputtext").
+              subject
+            span
+          .contact-content.contact-area
+            textarea.contact-input(name, cols="30", rows="10",id="inputtextarea")
+            label.contact-label(for="inputtextarea").
+              Message              
+            span
+        a.btn.btn-default(href="#") send Message 

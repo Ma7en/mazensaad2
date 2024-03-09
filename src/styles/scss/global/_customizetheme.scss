@@ -1,0 +1,183 @@
+/* start theme customize  */
+.customize-theme {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: var(--small-font-size);
+    display: none;
+    .card {
+        background: var(--color-white);
+        padding: 3rem;
+        width: 40%;
+        max-width: 600px;
+        border-radius: var(--border-radius);
+        -webkit-border-radius: var(--border-radius);
+        -moz-border-radius: var(--border-radius);
+        -ms-border-radius: var(--border-radius);
+        -o-border-radius: var(--border-radius);
+
+        .font-size {
+            margin-top: var(--m-2-5);
+            > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: var(--color-light);
+                padding: 0.6rem 1rem;
+                border-radius: var(--border-radius);
+                -webkit-border-radius: var(--border-radius);
+                -moz-border-radius: var(--border-radius);
+                -ms-border-radius: var(--border-radius);
+                -o-border-radius: var(--border-radius);
+
+                .choose-size {
+                    background: hsl(252, 100%, 90%);
+                    height: 0.3rem;
+                    width: 100%;
+                    margin: 0 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    span {
+                        width: 1rem;
+                        height: 1rem;
+                        background: hsl(252, 100%, 90%);
+                        cursor: pointer;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        &.active {
+                            background: var(--color-primary);
+                        }
+                    }
+                }
+            }
+        }
+
+        .color {
+            margin-top: var(--m-2);
+            .choose-color {
+                background: var(--color-light);
+                padding: 0.6rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: var(--border-radius);
+                -webkit-border-radius: var(--border-radius);
+                -moz-border-radius: var(--border-radius);
+                -ms-border-radius: var(--border-radius);
+                -o-border-radius: var(--border-radius);
+                span {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    cursor: pointer;
+                    background: var(--color-primary);
+                    border-radius: var(--border-radius);
+                    -webkit-border-radius: var(--border-radius);
+                    -moz-border-radius: var(--border-radius);
+                    -ms-border-radius: var(--border-radius);
+                    -o-border-radius: var(--border-radius);
+                    &:nth-child(1) {
+                        background: hsl(252, 75%, 60%);
+                    }
+
+                    &:nth-child(2) {
+                        background: hsl(52, 75%, 60%);
+                    }
+
+                    &:nth-child(3) {
+                        background: hsl(352, 75%, 60%);
+                    }
+
+                    &:nth-child(4) {
+                        background: hsl(152, 75%, 60%);
+                    }
+
+                    &:nth-child(5) {
+                        background: hsl(202, 75%, 60%);
+                    }
+
+                    &.active {
+                        border: 5px solid #fff;
+                    }
+                }
+            }
+        }
+
+        .background {
+            margin-top: var(--m-2);
+            .choose-bg {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.6rem;
+                > div {
+                    padding: 0.8rem 0.2rem;
+                    width: 100%;
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-evenly;
+                    cursor: pointer;
+                    border-radius: 0.4rem;
+                    -webkit-border-radius: 0.4rem;
+                    -moz-border-radius: 0.4rem;
+                    -ms-border-radius: 0.4rem;
+                    -o-border-radius: 0.4rem;
+                    &.active {
+                        border: 2px solid var(--color-primary);
+                    }
+                    span {
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        border: 2px solid var(--color-gray);
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                }
+                .bg-1 {
+                    background: hsl(252, 30%, 92%);
+                    color: hsl(252, 30%, 17%);
+                }
+                .bg-2 {
+                    background: hsl(252, 30%, 17%);
+                    color: #fff;
+                }
+                .bg-3 {
+                    background: hsl(252, 30%, 10%);
+                    color: #fff;
+                }
+            }
+        }
+
+        @media (max-width: 1200px) {
+            width: 50vw;
+        }
+
+        @media (max-width: 968px) {
+            width: 58vw;
+        }
+
+        @media (max-width: 767px) {
+            width: 75vw;
+        }
+
+        @media (max-width: 576px) {
+            width: 96vw;
+            padding: 1rem;
+        }
+    }
+}
+
+/* end theme customize  */

@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        //- meta and FAVICON and share website to scial 
+        include includes/public/me-fa-sc.pug
+
+        //- fonts google online and offline
+        include includes/public/fonts.pug
+
+        //- styleing 
+        include includes/public/styles.pug
+
+        
+        
+
+        //- name is web site
+        block pageTitle 
+            title Mazen Saad 
+    body 
+
+        include ui/themes/themes.pug
+
+        include ui/header/header.pug
+        
+        include ui/landing/landing.pug
+        
+        include ui/about/aboutCom.pug
+        include ui/experience/experienceCom.pug
+        include ui/pricing/pricingCom.pug
+        include ui/portfolio/portfolioCom.pug
+        include ui/testimonial/testimonialCom.pug
+        //- include ui/testimonial/x
+        include ui/blogs/blogsCom.pug
+        include ui/contact/contactCom.pug
+        
+        include ui/footer/footer.pug 
+       
+       
+
+
+
+        
+        
+
+        //- include includes/scripts.pug
+        //- script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+        script(src="js/swiper-bundle.min.js")
+        script(src="js/main.js")

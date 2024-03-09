@@ -1,0 +1,17 @@
+/* start footer */
+
+.footer {
+    padding: 60px 0 40px;
+    .container {
+        .text {
+            text-align: center;
+            p {
+                span:nth-child(1) {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/* end footer */
