@@ -213,7 +213,7 @@ function js() {
 }
 
 // -start build
-function build() {
+exports.build = function () {
     // Call your existing tasks in the desired order to build your project
     return parallel(
         html,
@@ -226,7 +226,7 @@ function build() {
         fonts,
         moveimages
     )();
-}
+};
 
 // ===
 exports.default = function () {
