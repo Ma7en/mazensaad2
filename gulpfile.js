@@ -58,7 +58,7 @@ const notify = require("gulp-notify");
 // ====================
 
 // -start html pug
-function html() {
+function html(done) {
     return (
         gulp
             .src([
@@ -79,11 +79,12 @@ function html() {
             .pipe(gulp.dest("build/"))
             // .pipe(notify("HTML() Done"))
             .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start html to pug pages
-function pages() {
+function pages(done) {
     return (
         gulp
             .src(["src/pages/**/*.pug"])
@@ -91,11 +92,12 @@ function pages() {
             .pipe(gulp.dest("build/pages/"))
             // .pipe(notify("pages() Done"))
             .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start css
-function css() {
+function css(done) {
     return (
         gulp
             .src(["src/styles/*.scss"])
@@ -108,11 +110,12 @@ function css() {
             .pipe(gulp.dest("build/css/"))
             // .pipe(notify("CSS() Done"))
             .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start public
-function styleAll() {
+function styleAll(done) {
     return (
         gulp
             .src([
@@ -127,53 +130,38 @@ function styleAll() {
             .pipe(gulp.dest("build/css/"))
             // .pipe(notify("styleAll() Done"))
             .pipe(livereload())
-    );
-}
-
-// -start webfonts
-function webfonts() {
-    return (
-        gulp
-            .src(["src/webfonts/**/*"])
-            .pipe(gulp.dest("build/webfonts/"))
-            // .pipe(notify("webfonts() Done"))
-            .pipe(livereload())
-    );
-}
-
-// -start webfonts
-function fonts() {
-    return (
-        gulp
-            .src(["src/styles/fonts/**/*"])
-            .pipe(gulp.dest("build/css/fonts/"))
-            // .pipe(notify("webfonts() Done"))
-            .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start js
-function scriptJS() {
+function scriptJS(done) {
     return (
         gulp
             .src([
-                "src/js/**/*",
-                "!src/js/global/*.pug",
-                "!src/js/global/**/*",
-                "!src/js/**/*",
-                "!src/js/public/",
-                "!src/js/public/**/*",
+                // "src/js/**/*",
+                // "!src/js/global/",
+                // "!src/js/global/*.pug",
+                // "!src/js/global/**/*",
+                // // "!src/js/**/*",
+                // "!src/js/public/",
+                // "!src/js/public/.js",
+                // "!src/js/public/**/*",
+                "src/js/*.js",
             ])
             // .pipe(concat("main.js"))
+            .pipe(sourcemaps.init())
+            .pipe(sourcemaps.write())
             .pipe(minify())
             .pipe(gulp.dest("build/js/"))
             // .pipe(notify("scriptJS() Done"))
             .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start All JS
-function scriptAllJS() {
+function scriptAllJS(done) {
     return (
         gulp
             .src([
@@ -187,17 +175,43 @@ function scriptAllJS() {
             .pipe(gulp.dest("build/js/"))
             // .pipe(notify("scriptAllJS() Done"))
             .pipe(livereload())
+            .on("end", done)
+    );
+}
+
+// -start webfonts
+function webfonts(done) {
+    return (
+        gulp
+            .src(["src/webfonts/**/*"])
+            .pipe(gulp.dest("build/webfonts/"))
+            // .pipe(notify("webfonts() Done"))
+            .pipe(livereload())
+            .on("end", done)
+    );
+}
+
+// -start webfonts
+function fonts(done) {
+    return (
+        gulp
+            .src(["src/styles/fonts/**/*"])
+            .pipe(gulp.dest("build/css/fonts/"))
+            // .pipe(notify("webfonts() Done"))
+            .pipe(livereload())
+            .on("end", done)
     );
 }
 
 // -start images task
-function moveimages() {
+function moveimages(done) {
     return (
         gulp
             .src(["src/images/**/*"])
             .pipe(gulp.dest("build/images/"))
             // .pipe(notify("moveimages() Done"))
             .pipe(livereload())
+            .on("end", done)
     );
 }
 
@@ -213,23 +227,52 @@ function js() {
 }
 
 // -start build
-exports.build = function () {
-    // Call your existing tasks in the desired order to build your project
-    return parallel(
-        html,
-        pages,
-        css,
-        scriptJS,
-        styleAll,
-        scriptAllJS,
-        webfonts,
-        fonts,
-        moveimages
-    )();
+// exports.build = function () {
+//     // Call your existing tasks in the desired order to build your project
+//     return parallel(
+//         html,
+//         pages,
+//         css,
+//         styleAll,
+//         scriptJS,
+//         scriptAllJS,
+//         webfonts,
+//         fonts,
+//         moveimages
+//     )();
+// };
+exports.build = gulp.series(
+    html,
+    pages,
+    css,
+    styleAll,
+    scriptJS,
+    scriptAllJS,
+    webfonts,
+    fonts,
+    moveimages
+);
+
+// => gulp localhost
+exports.default = function () {
+    require("./server");
+    livereload.listen();
+
+    gulp.watch(["src/**/*.js"], parallel(js));
+
+    gulp.watch(["src/**/*.pug"], parallel(html));
+    gulp.watch(["src/**/*.pug"], parallel(pages));
+    gulp.watch(["src/styles/**/*.scss"], parallel(css));
+    gulp.watch(["src/**/*.js"], parallel(scriptJS));
+
+    gulp.watch(["src/0/css.pug"], parallel(styleAll));
+    gulp.watch(["src/0/js.pug"], parallel(scriptAllJS));
+    gulp.watch(["src/0/font.pug"], parallel(webfonts, fonts));
+    gulp.watch(["src/0/img.pug"], parallel(moveimages));
 };
 
-// ====
-exports.default = function () {
+// => npm run start
+exports.server = function () {
     require("./server");
     livereload.listen();
 

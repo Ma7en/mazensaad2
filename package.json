@@ -22,6 +22,9 @@
         "webpack": "^5.90.3"
     },
     "scripts": {
+        "start": "gulp server",
+        "build": "gulp build",
+        "lint": "eslint .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "mazen saad",
