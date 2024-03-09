@@ -212,6 +212,22 @@ function js() {
         .pipe(dest("build/"));
 }
 
+// -start build
+function build() {
+    // Call your existing tasks in the desired order to build your project
+    return parallel(
+        html,
+        pages,
+        css,
+        scriptJS,
+        styleAll,
+        scriptAllJS,
+        webfonts,
+        fonts,
+        moveimages
+    )();
+}
+
 // ===
 exports.default = function () {
     require("./server");

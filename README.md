@@ -3,9 +3,11 @@
 =
 
 Main project mazen saad
-vite
+Gulp
 
 <!-- upload files to github -->
+
+# Upload GitHub
 
 git init
 
@@ -24,6 +26,8 @@ git remote add origin https://github.com/Ma7en/mazensaad2.git
 git push -u origin main
 
 <!-- upload files to firebase -->
+
+# Upload Firebase
 
 npm install -g firebase-tools
 
